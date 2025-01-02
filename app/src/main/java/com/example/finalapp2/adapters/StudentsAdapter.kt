@@ -1,12 +1,12 @@
-package com.example.assiment2.adapters
+package com.example.finalapp2.adapters
 
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.assiment2.databinding.RowStudentBinding
-import com.example.assiment2.modelsAndRepository.Student
+import com.example.finalapp2.modelsAndRepository.Student
 import com.example.finalapp2.R
+import com.example.finalapp2.databinding.RowStudentBinding
 
 class StudentsAdapter(
     private val students: List<Student>,

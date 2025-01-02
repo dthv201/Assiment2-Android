@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.assiment2">
+    package="com.example.finalapp2">
 
     <application
         android:allowBackup="true"
@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalApp2">
 
-        <!-- The launcher (main) activity -->
-        <activity android:name=".StudentListActivity"
+
+        <activity
+            android:name=".StudentListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,12 +21,9 @@
             </intent-filter>
         </activity>
 
-        <!-- Other activities -->
-        <activity android:name=".NewStudentActivity" />
-        <!-- If you decide to implement these:
-        <activity android:name=".StudentDetailsActivity" />
-        <activity android:name=".EditStudentActivity" />
-        -->
+        <activity
+            android:name=".NewStudentActivity"
+            android:exported="false" />
 
     </application>
 

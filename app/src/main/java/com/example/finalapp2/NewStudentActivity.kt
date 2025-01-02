@@ -1,12 +1,12 @@
-package com.example.assiment2
+package com.example.finalapp2
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-import com.example.assiment2.modelsAndRepository.Student
-import com.example.assiment2.modelsAndRepository.StudentRepository
+import com.example.finalapp2.modelsAndRepository.Student
+import com.example.finalapp2.modelsAndRepository.StudentRepository
 import com.example.finalapp2.databinding.ActivityNewStudentBinding
 
 class NewStudentActivity : AppCompatActivity() {

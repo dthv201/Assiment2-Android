@@ -1,4 +1,4 @@
-package com.example.assiment2.modelsAndRepository
+package com.example.finalapp2.modelsAndRepository
 
 object StudentRepository {
     // This is our "in-memory DB"

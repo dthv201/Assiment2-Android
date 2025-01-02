@@ -1,12 +1,12 @@
-package com.example.assiment2
+package com.example.finalapp2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-
-import com.example.assiment2.adapters.StudentsAdapter
-import com.example.assiment2.modelsAndRepository.StudentRepository
+import com.example.finalapp2.NewStudentActivity
+import com.example.finalapp2.adapters.StudentsAdapter
+import com.example.finalapp2.modelsAndRepository.StudentRepository
 import com.example.finalapp2.databinding.ActivityStudentsListBinding
 
 class StudentListActivity : AppCompatActivity() {
