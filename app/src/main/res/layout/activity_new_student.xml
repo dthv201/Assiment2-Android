@@ -94,23 +94,9 @@
         app:layout_constraintStart_toEndOf="@id/tvAddress"
         app:layout_constraintTop_toBottomOf="@id/etPhone" />
 
-    <!-- Checkbox -->
-    <CheckBox
-        android:id="@+id/checkBoxNewStudent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Checked?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etAddress" />
-
     <!-- Buttons -->
 
-
     <!-- Cancel Button -->
-
-    <!-- Save Button -->
-
-
     <Button
         android:id="@+id/btnCancel"
         android:layout_width="0dp"
@@ -119,8 +105,9 @@
         android:text="Cancel"
         app:layout_constraintEnd_toStartOf="@id/btnSave"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkBoxNewStudent" />
+        app:layout_constraintTop_toBottomOf="@id/etAddress" />
 
+    <!-- Save Button -->
     <Button
         android:id="@+id/btnSave"
         android:layout_width="0dp"
@@ -130,7 +117,6 @@
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnCancel"
-        app:layout_constraintTop_toBottomOf="@id/checkBoxNewStudent" />
-
+        app:layout_constraintTop_toBottomOf="@id/etAddress" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
