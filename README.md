@@ -65,4 +65,10 @@ Contributing
     Fork the repository and clone to your local machine.
     Create a new branch for your feature or bug fix.
     Commit your changes and push to your fork.
+
     Open a Pull Request detailing your changes.
+
+
+
+
+![ezgif-4-4eabb38b05](https://github.com/user-attachments/assets/576cba45-e708-48f6-9fd4-1b178be7c158)
