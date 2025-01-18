@@ -1,13 +1,12 @@
 package com.example.finalapp2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.finalapp2.NewStudentActivity
 import com.example.finalapp2.adapters.StudentsAdapter
-import com.example.finalapp2.modelsAndRepository.StudentRepository
 import com.example.finalapp2.databinding.ActivityStudentsListBinding
+import com.example.finalapp2.modelsAndRepository.StudentRepository
 
 class StudentListActivity : AppCompatActivity() {
 
@@ -20,27 +19,28 @@ class StudentListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Initialize RecyclerView
-        adapter = StudentsAdapter(StudentRepository.studentsList) { position ->
-            // For now, let's just show a quick message instead of opening details
+        adapter = StudentsAdapter(StudentRepository.getAllStudents()) { position ->
             Toast.makeText(this, "Clicked on position $position", Toast.LENGTH_SHORT).show()
-
-            // If you later implement StudentDetailsActivity, you can restore this:
-            // val intent = StudentDetailsActivity.newIntent(this, position)
-            // startActivity(intent)
         }
         binding.studentsRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.studentsRecyclerView.adapter = adapter
 
-        // FloatingActionButton to create new student
+        // Handle Add Button
         binding.addButton.setOnClickListener {
             val intent = NewStudentActivity.newIntent(this)
             startActivity(intent)
+        }
+
+        // Handle Delete Button
+        binding.deleteButton.setOnClickListener {
+            StudentRepository.removeCheckedStudents()
+            adapter.notifyDataSetChanged()
+            Toast.makeText(this, "Selected students deleted", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onResume() {
         super.onResume()
-        // Refresh list (in case something changed)
         adapter.notifyDataSetChanged()
     }
 }

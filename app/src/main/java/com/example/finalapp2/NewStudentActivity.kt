@@ -27,7 +27,6 @@ class NewStudentActivity : AppCompatActivity() {
             val id = binding.etId.text.toString()
             val phone = binding.etPhone.text.toString()
             val address = binding.etAddress.text.toString()
-            val checked = binding.checkBoxNewStudent.isChecked
 
             // Create new student with the given data
             val newStudent = Student(
@@ -35,7 +34,6 @@ class NewStudentActivity : AppCompatActivity() {
                 name = name,
                 phone = phone,
                 address = address,
-                isChecked = checked
             )
 
             // Add to "database"

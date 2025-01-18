@@ -21,6 +21,14 @@ object StudentRepository {
     }
 
     fun removeStudent(index: Int) {
-        studentsList.removeAt(index)
+        if (index in studentsList.indices) {
+            studentsList.removeAt(index)
+        }
+    }
+    fun removeCheckedStudents() {
+        studentsList.removeAll { it.isChecked }
+    }
+    fun getAllStudents(): List<Student> {
+        return studentsList
     }
 }
