@@ -5,6 +5,7 @@
     android:padding="16dp">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -13,8 +14,8 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:src="@android:drawable/ic_menu_gallery"
-            android:contentDescription="Student Picture" />
+            android:contentDescription="Student Picture"
+            android:src="@drawable/ic_student_placeholder" />
 
         <EditText
             android:id="@+id/nameEditText"
@@ -30,6 +31,20 @@
             android:hint="Student ID"
             android:inputType="text" />
 
+        <EditText
+
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Student Phone" />
+
+        <EditText
+
+            android:id="@+id/adressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Student Adress" />
+
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
@@ -37,11 +52,17 @@
             android:text="Save Changes" />
 
         <Button
+            android:id="@+id/cencelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cencel Changes" />
+
+        <Button
             android:id="@+id/deleteButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Delete Student"
             android:layout_marginTop="8dp"
+            android:text="Delete Student"
             android:textColor="@android:color/holo_red_dark" />
     </LinearLayout>
 </ScrollView>

@@ -1,6 +1,10 @@
+
 package com.example.finalapp2
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -14,41 +18,55 @@ class EditStudentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_student)
 
-        studentIndex = intent.getIntExtra("studentIndex", -1)
+        // Fetch the student index from the intent
+        studentIndex = intent.getIntExtra(EXTRA_STUDENT_INDEX, -1)
+        Log.d("EditStudentActivity", "Received studentIndex: $studentIndex")
+
         if (studentIndex < 0 || studentIndex >= StudentRepository.getAllStudents().size) {
             finish()
             return
         }
 
+        // Fetch the student details
         val student = StudentRepository.getAllStudents()[studentIndex]
+        findViewById<EditText>(R.id.nameEditText).setText(student.name)
+        findViewById<EditText>(R.id.idEditText).setText(student.id)
+        findViewById<EditText>(R.id.phoneEditText).setText(student.phone)
+        findViewById<EditText>(R.id.adressEditText).setText(student.address)
 
-        val nameEditText: EditText = findViewById(R.id.nameEditText)
-        val idEditText: EditText = findViewById(R.id.idEditText)
-        val saveButton: Button = findViewById(R.id.saveButton)
-        val deleteButton: Button = findViewById(R.id.deleteButton)
-
-        // Populate UI with existing student data
-        nameEditText.setText(student.name)
-        idEditText.setText(student.id)
-
-        saveButton.setOnClickListener {
-            val updatedName = nameEditText.text.toString()
-            val updatedId = idEditText.text.toString()
+        // Save Button Logic
+        findViewById<Button>(R.id.saveButton).setOnClickListener {
+            val updatedName = findViewById<EditText>(R.id.nameEditText).text.toString()
+            val updatedId = findViewById<EditText>(R.id.idEditText).text.toString()
+            val updatedPhone = findViewById<EditText>(R.id.phoneEditText).text.toString()
+            val updatedAddress = findViewById<EditText>(R.id.adressEditText).text.toString()
 
             val updatedStudent = Student(
                 id = updatedId,
                 name = updatedName,
-                phone = student.phone,
-                address = student.address,
-                isChecked = student.isChecked
+                phone = updatedPhone,
+                address = updatedAddress,
+                isChecked = student.isChecked // Preserve existing check status
             )
+
             StudentRepository.updateStudent(studentIndex, updatedStudent)
-            finish()
+            finish() // Return to previous activity
         }
 
-        deleteButton.setOnClickListener {
+        // Delete Button Logic
+        findViewById<Button>(R.id.deleteButton).setOnClickListener {
             StudentRepository.removeStudent(studentIndex)
             finish()
+        }
+    }
+
+    companion object {
+        private const val EXTRA_STUDENT_INDEX = "com.example.finalapp2.student_index"
+
+        fun newIntent(context: Context, studentIndex: Int): Intent {
+            return Intent(context, EditStudentActivity::class.java).apply {
+                putExtra(EXTRA_STUDENT_INDEX, studentIndex)
+            }
         }
     }
 }

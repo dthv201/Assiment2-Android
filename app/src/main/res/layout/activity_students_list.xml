@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete Selected"
-        android:layout_margin="8dp" />
+<!--    <Button-->
+<!--        android:id="@+id/deleteButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Delete Selected"-->
+<!--        android:layout_margin="8dp" />-->
     <!-- Floating action button or a simple button to add new student -->
     <!-- For simplicity, let's use a normal button here -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
