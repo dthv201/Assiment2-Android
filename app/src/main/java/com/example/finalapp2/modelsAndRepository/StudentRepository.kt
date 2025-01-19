@@ -6,9 +6,9 @@ object StudentRepository {
 
     // Sample data if you want some defaults (optional)
     init {
-        studentsList.add(Student("Alice",  "111", "0501234567", "Some Address", isChecked = true))
+        studentsList.add(Student("Alice",  "111", "0501234567", "Some Address", isChecked = false))
         studentsList.add(Student("Bob",    "222", "0502345678", "Other Address", isChecked = false))
-        studentsList.add(Student("Charlie","333", "0503456789", "Another Address", isChecked = true))
+        studentsList.add(Student("Charlie","333", "0503456789", "Another Address", isChecked = false))
     }
 
     fun addStudent(student: Student) {

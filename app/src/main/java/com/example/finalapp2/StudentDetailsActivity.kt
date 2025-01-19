@@ -26,14 +26,12 @@ class StudentDetailsActivity : AppCompatActivity() {
 
         val student = StudentRepository.getAllStudents()[studentIndex]
 
-        // Populate UI with student details
-        val nameTextView: TextView = findViewById(R.id.nameTextView)
-        val idTextView: TextView = findViewById(R.id.idTextView)
-        val photoImageView: ImageView = findViewById(R.id.photoImageView)
-
-        nameTextView.text = student.name
-        idTextView.text = student.id
-        photoImageView.setImageResource(R.drawable.ic_student_placeholder)
+        // Update the UI
+        findViewById<ImageView>(R.id.photoImageView).setImageResource(R.drawable.ic_student_placeholder)
+        findViewById<TextView>(R.id.idTextView).text = "ID: ${student.id}"
+        findViewById<TextView>(R.id.nameTextView).text = "Name: ${student.name}"
+        findViewById<TextView>(R.id.phoneTextView).text = "Phone: ${student.phone}"
+        findViewById<TextView>(R.id.adressTextView).text = "Adress: ${student.address}"
 
         val editButton: Button = findViewById(R.id.editButton)
         editButton.setOnClickListener {

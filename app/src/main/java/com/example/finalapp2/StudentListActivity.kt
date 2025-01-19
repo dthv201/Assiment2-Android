@@ -1,5 +1,6 @@
 package com.example.finalapp2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,8 +21,13 @@ class StudentListActivity : AppCompatActivity() {
 
         // Initialize RecyclerView
         adapter = StudentsAdapter(StudentRepository.getAllStudents()) { position ->
-            Toast.makeText(this, "Clicked on position $position", Toast.LENGTH_SHORT).show()
+//            val intent = Intent(this, EditStudentActivity::class.java)
+            val intent = Intent(this, StudentDetailsActivity::class.java)
+
+            intent.putExtra("studentIndex", position)
+            startActivity(intent)
         }
+
         binding.studentsRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.studentsRecyclerView.adapter = adapter
 
@@ -30,7 +36,6 @@ class StudentListActivity : AppCompatActivity() {
             val intent = NewStudentActivity.newIntent(this)
             startActivity(intent)
         }
-
         // Handle Delete Button
         binding.deleteButton.setOnClickListener {
             StudentRepository.removeCheckedStudents()
@@ -38,7 +43,6 @@ class StudentListActivity : AppCompatActivity() {
             Toast.makeText(this, "Selected students deleted", Toast.LENGTH_SHORT).show()
         }
     }
-
     override fun onResume() {
         super.onResume()
         adapter.notifyDataSetChanged()

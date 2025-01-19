@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="172dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -33,6 +33,20 @@
             android:layout_height="wrap_content"
             android:text="Student ID"
             android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/phoneTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student Phone"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/adressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student address"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <CheckBox
@@ -40,4 +54,3 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>
-

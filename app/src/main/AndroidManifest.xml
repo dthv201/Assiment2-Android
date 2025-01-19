@@ -24,7 +24,8 @@
         <activity
             android:name=".NewStudentActivity"
             android:exported="false" />
-
+        <activity android:name=".StudentDetailsActivity" />
+        <activity android:name=".EditStudentActivity" />
     </application>
 
 </manifest>
